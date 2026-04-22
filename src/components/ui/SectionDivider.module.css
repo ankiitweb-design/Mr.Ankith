@@ -1,0 +1,60 @@
+.divider {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 0 2rem;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  overflow: visible;
+}
+
+.flipped {
+  flex-direction: row-reverse;
+}
+
+.line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--c-border) 30%,
+    var(--c-border) 70%,
+    transparent 100%
+  );
+}
+
+.badge {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.3rem 0.8rem;
+  border: 1px solid var(--c-border);
+  background: var(--c-bg);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.slash {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--c-accent);
+  opacity: 0.6;
+}
+
+.text {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--c-text-muted);
+}
+
+.chevron {
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  pointer-events: none;
+}

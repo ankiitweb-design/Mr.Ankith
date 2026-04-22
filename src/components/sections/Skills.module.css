@@ -1,0 +1,204 @@
+.skills {
+  padding: 8rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+/* ── Marquee ── */
+.marqueeWrap {
+  overflow: hidden;
+  border-top: 1px solid var(--c-border);
+  border-bottom: 1px solid var(--c-border);
+  padding: 0.85rem 0;
+  margin-bottom: 6rem;
+}
+
+.marquee {
+  user-select: none;
+}
+
+.marqueeItem {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0 1.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--c-text-dim);
+  white-space: nowrap;
+}
+
+.marqueeItemAlt {
+  color: var(--c-text-muted);
+}
+
+.marqueeDot {
+  color: var(--c-accent);
+  font-size: 0.5rem;
+}
+
+/* ── Header ── */
+.header {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 3rem;
+  align-items: end;
+  margin-bottom: 4rem;
+}
+
+.heading {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  line-height: 0.95;
+  letter-spacing: -0.01em;
+  margin-top: 0.75rem;
+}
+
+.desc {
+  max-width: 320px;
+  font-size: 0.9rem;
+  color: var(--c-text-dim);
+  line-height: 1.7;
+  align-self: end;
+}
+
+/* ── Body ── */
+.body {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 5rem;
+  align-items: start;
+}
+
+.barsHeader {
+  margin-bottom: 1.5rem;
+}
+
+/* ── Skill Bars ── */
+.bars {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.skillBar {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.skillBarTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.skillBarLabel {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  color: var(--c-text-dim);
+}
+
+.skillBarPct {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  color: var(--c-accent);
+}
+
+.skillBarTrack {
+  height: 2px;
+  background: var(--c-surface);
+  position: relative;
+  overflow: hidden;
+}
+
+.skillBarFill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: linear-gradient(90deg, var(--c-accent), var(--c-accent-3));
+  box-shadow: 0 0 10px rgba(0, 255, 230, 0.5);
+}
+
+/* ── Category Cards ── */
+.catGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.catCard {
+  background: var(--c-bg-2);
+  border: 1px solid var(--c-border);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  transition: border-color 0.3s, transform 0.3s;
+  clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 0 100%);
+}
+
+.catCard:hover {
+  border-color: rgba(0, 255, 230, 0.3);
+  transform: translateY(-4px);
+}
+
+.catIcon {
+  font-size: 1.5rem;
+  color: var(--c-accent);
+  line-height: 1;
+}
+
+.catTitle {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--c-text);
+}
+
+.catItems {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.catItem {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.82rem;
+  color: var(--c-text-dim);
+}
+
+.catDot {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--c-accent);
+  opacity: 0.5;
+  flex-shrink: 0;
+}
+
+@media (max-width: 900px) {
+  .header {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .body {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  .catGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .catGrid { grid-template-columns: 1fr; }
+}

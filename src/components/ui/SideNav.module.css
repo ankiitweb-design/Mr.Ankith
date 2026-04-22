@@ -1,0 +1,67 @@
+.sideNav {
+  position: fixed;
+  right: 2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 500;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+}
+
+.dot {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: none;
+  border: none;
+  cursor: none;
+  padding: 4px;
+}
+
+.dotCore {
+  display: block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--c-text-muted);
+  border: 1px solid transparent;
+  transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
+  flex-shrink: 0;
+}
+
+.dot:hover .dotCore,
+.active .dotCore {
+  background: var(--c-accent);
+  box-shadow: 0 0 8px var(--c-accent);
+  transform: scale(1.4);
+}
+
+.active .dotCore {
+  border-color: rgba(0, 255, 230, 0.3);
+}
+
+.dotLabel {
+  position: absolute;
+  right: calc(100% + 0.75rem);
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--c-accent);
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s;
+}
+
+.dot:hover .dotLabel,
+.active .dotLabel {
+  opacity: 1;
+}
+
+@media (max-width: 1024px) {
+  .sideNav { display: none; }
+}

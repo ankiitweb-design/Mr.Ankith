@@ -1,0 +1,232 @@
+.about {
+  padding: 8rem 0;
+  position: relative;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 6rem;
+  align-items: start;
+}
+
+/* ── Left column ── */
+.leftCol {
+  position: sticky;
+  top: calc(var(--nav-height) + 2rem);
+}
+
+.avatarWrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3/4;
+  max-width: 360px;
+}
+
+.avatarBg {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 50% 40%, rgba(0,255,230,0.06) 0%, transparent 70%);
+  border: 1px solid var(--c-border);
+  clip-path: polygon(0 0, calc(100% - 24px) 0, 100% 24px, 100% 100%, 24px 100%, 0 calc(100% - 24px));
+  z-index: 2;
+  pointer-events: none;
+}
+
+.avatarSvg {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+.badge {
+  position: absolute;
+  padding: 0.35rem 0.75rem;
+  background: var(--c-bg-3);
+  border: 1px solid var(--c-border-bright);
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--c-accent);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  animation: float 3s ease-in-out infinite;
+}
+
+.badge1 {
+  top: 15%;
+  right: -1.5rem;
+  animation-delay: 0s;
+}
+.badge2 {
+  top: 45%;
+  right: -2rem;
+  animation-delay: 0.8s;
+}
+.badge3 {
+  top: 72%;
+  right: -1rem;
+  animation-delay: 1.5s;
+}
+
+/* ── Right column ── */
+.rightCol {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.heading {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  line-height: 0.95;
+  letter-spacing: -0.01em;
+  margin-top: 0.75rem;
+}
+
+.bio {
+  font-size: 1rem;
+  color: var(--c-text-dim);
+  line-height: 1.75;
+  margin-bottom: 0.75rem;
+}
+
+.bio strong {
+  color: var(--c-text);
+  font-weight: 500;
+}
+
+/* ── Timeline ── */
+.expSection {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin-top: 0.5rem;
+}
+
+.timeline {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1rem;
+}
+
+.expItem {
+  display: grid;
+  grid-template-columns: 110px 20px 1fr;
+  gap: 0 1rem;
+  padding-bottom: 2rem;
+  transition: opacity 0.3s;
+}
+
+.expItem:hover { opacity: 0.85; }
+
+.expLeft {
+  padding-top: 0.2rem;
+  text-align: right;
+}
+
+.expPeriod {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.08em;
+  color: var(--c-text-muted);
+  line-height: 1.4;
+  white-space: nowrap;
+}
+
+.expLine {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 0.3rem;
+}
+
+.expDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--c-accent);
+  border: 2px solid var(--c-bg);
+  box-shadow: 0 0 10px var(--c-accent);
+  flex-shrink: 0;
+}
+
+.expVLine {
+  flex: 1;
+  width: 1px;
+  background: var(--c-border);
+  margin-top: 6px;
+}
+
+.expRight {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.expRole {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--c-text);
+}
+
+.expCompany {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--c-accent);
+  letter-spacing: 0.1em;
+}
+
+.expDesc {
+  font-size: 0.85rem;
+  color: var(--c-text-dim);
+  line-height: 1.6;
+  margin-top: 0.25rem;
+}
+
+.expTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.5rem;
+}
+
+.expTag {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  padding: 0.2rem 0.5rem;
+  background: rgba(0,255,230,0.06);
+  border: 1px solid rgba(0,255,230,0.15);
+  color: var(--c-text-dim);
+  letter-spacing: 0.05em;
+}
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  .leftCol {
+    position: relative;
+    top: auto;
+  }
+  .avatarWrap {
+    max-width: 280px;
+    margin: 0 auto;
+  }
+}
+
+.avatarPhoto {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  filter: contrast(1.05) brightness(1.02);
+  clip-path: polygon(0 0, calc(100% - 24px) 0, 100% 24px, 100% 100%, 24px 100%, 0 calc(100% - 24px));
+  transition: transform 0.4s ease;
+}
+
+.avatarPhoto:hover {
+  transform: scale(1.03);
+}
