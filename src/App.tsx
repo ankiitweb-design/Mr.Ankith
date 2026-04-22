@@ -11,7 +11,6 @@ import Nav from './components/ui/Nav';
 import SideNav from './components/ui/SideNav';
 import ProgressBar from './components/ui/ProgressBar';
 import Footer from './components/ui/Footer';
-import SectionDivider from './components/ui/SectionDivider';
 import TransitionOverlay from './components/ui/TransitionOverlay';
 
 import Hero from './components/sections/Hero';
